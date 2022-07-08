@@ -1,4 +1,4 @@
-import criateComments from "/js/module/imageGenerator/criate-comments.js";
+import criateComments from "./criate-pickcher.js";
 import  {
   descriptions as DESCRIPTIONS,
   MIN_LIKES,
