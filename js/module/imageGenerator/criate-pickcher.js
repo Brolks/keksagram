@@ -3,7 +3,7 @@ import  {
   descriptions as DESCRIPTIONS,
   MIN_LIKES,
   MAX_LIKES,
-} from '/js/module/const.js';
+} from '../const.js';
 function criatePickcher(id){
   return {
     id:id,
