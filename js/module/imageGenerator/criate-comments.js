@@ -1,10 +1,10 @@
-import {criateRandomNamber} from '/js/module/utility.js';
+import {criateRandomNamber} from './../utility.js';
 import  {
   messages as MESSAGES,
   names as NAMES,
   MAX_AVATAR_IMAGE,
   MAX_ID_COMMENT,
-} from '/js/module/const.js';
+} from './../const.js';
 function criateComments(count){
   let commentPull =[];
   for(let i=0; i<count;i++){
