@@ -5,5 +5,8 @@ function criateRandomNamber(varFunc,func,obj){
   else
     return criateRandomNamber(varFunc,func,obj);
 }
+function hiddenElement(name){
+  document.querySelector(name).classList.add('hidden');
+}
 
-export {criateRandomNamber};
+export {criateRandomNamber,hiddenElement};
