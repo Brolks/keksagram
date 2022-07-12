@@ -1,3 +1,6 @@
+/*
+*Возвращает все комментарии фотографии
+*/
 function criateCommentsFragment(data){
   const templateComment = document.querySelector('#social__comment').content.querySelector('li');
   const fragment = document.createDocumentFragment();
