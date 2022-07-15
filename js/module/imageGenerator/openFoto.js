@@ -1,6 +1,7 @@
 import criateCommentsFragment from "./criateCommentsFragment.js";
-function openFoto(element,data){
-  element.addEventListener('click',(evt)=>{
+import {showElement} from './../utility.js';
+function openFoto(data){
+  return (evt)=>{
     evt.preventDefault();
 
     document.querySelector('.comments-count').textContent=data.comments.length;
@@ -12,7 +13,7 @@ function openFoto(element,data){
     document.querySelector('.social__comments').appendChild(criateCommentsFragment(data.comments))
 
     document.querySelector('body').classList.add('modal-open');
-    document.querySelector('.big-picture').classList.remove('hidden');
-  })
+    showElement('.big-picture');
+  }
 }
 export default openFoto;

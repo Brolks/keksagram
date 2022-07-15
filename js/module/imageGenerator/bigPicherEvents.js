@@ -1,14 +1,23 @@
-import {hiddenElement} from './../utility.js';
+import { hideElement } from './../utility.js';
+const body = document.body;
 
-document.querySelector('.big-picture__cancel').addEventListener('click', () => {
-  hiddenElement('.big-picture');
-  document.querySelector('body').classList.remove('modal-open');
+document.querySelectorAll('.big-picture__cancel,.img-upload__cancel').forEach((ele) => {
+  ele.addEventListener('click', () => {
+    hideElement('.big-picture,.img-upload__overlay');
+    body.classList.remove('modal-open');
+  })
 });
+
 document.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 27) {
-    hiddenElement('.big-picture');
-    document.querySelector('body').classList.remove('modal-open');
+    document.querySelectorAll('.big-picture,.img-upload__overlay').forEach((ele) => {
+      if (document.activeElement.classList.value !== 'text__hashtags')
+        hideElement('.big-picture,.img-upload__overlay');
+    });
+
+    body.classList.remove('modal-open');
   }
 });
-hiddenElement('.social__comment-count');
-hiddenElement('.comments-loader');
+
+hideElement('.social__comment-count');
+hideElement('.comments-loader');

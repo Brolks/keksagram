@@ -1,6 +1,8 @@
 /* Общие стили. Каркас
    ========================================================================== */
-
+:root {
+  --img-new: url("../img/upload-default-image.jpg");
+}
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/OpenSansCondensed-Bold.woff2") format("woff2"),
@@ -513,7 +515,7 @@ main {
   width: 600px;
   height: 600px;
 
-  background-color: #ffffff;
+  background: #141414;
 }
 
 .img-upload__preview img {
@@ -622,7 +624,7 @@ main {
   font-size: 0;
 
   background-color: #314359;
-  background-image: url("../img/upload-default-image.jpg");
+  background-image: var(--img-new);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% auto;
@@ -1415,4 +1417,11 @@ main {
 
 .hidden {
   display: none;
+}
+
+.warning {
+  border: #fc4949 1px solid;
+  box-shadow:1px 1px red;
+  border-radius: 3px;
+  outline:none;
 }

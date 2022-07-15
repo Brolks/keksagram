@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="nouislider/nouislider.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Кекстаграм</title>
 </head>
@@ -33,7 +34,7 @@
         <div class="img-upload__wrapper">
           <h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
           <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data"
-            autocomplete="off">
+            autocomplete="off" action="https://23.javascript.pages.academy/kekstagram">
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
@@ -49,7 +50,7 @@
                   <!-- Изменение размера изображения -->
                   <fieldset class="img-upload__scale  scale">
                     <button type="button" class="scale__control  scale__control--smaller">Уменьшить</button>
-                    <input type="text" class="scale__control  scale__control--value" value="55%" title="Image Scale"
+                    <input type="text" class="scale__control  scale__control--value" value="100%" title="Image Scale"
                       name="scale" readonly>
                     <button type="button" class="scale__control  scale__control--bigger">Увеличить</button>
                   </fieldset>
@@ -126,7 +127,7 @@
                 <!-- Добавление хэш-тегов и комментария к изображению -->
                 <fieldset class="img-upload__text text">
                   <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
-                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..."></textarea>
+                  <textarea class="text__description" maxlength="140" name="description" placeholder="Ваш комментарий..."></textarea>
                 </fieldset>
 
                 <!-- Кнопка для отправки данных на сервер -->
@@ -260,34 +261,10 @@
   </template>
 
   <script src="js/lodash.js"></script>
+  <script src="nouislider/nouislider.js"></script>
+  <script src="js/global.js"></script>
   <script src="js/main.js" type="module"></script>
   <script src="js\module\imageGenerator\bigPicherEvents.js" type="module"></script>
-  <script>
-    function dragstart_handler(ev) {
-      // Add the target element's id to the data transfer object
-      ev.dataTransfer.setData("text/plain", ev.target.id);
-      ev.dataTransfer.effectAllowed = "move";
-      console.log(ev.target)
-    }
-
-    // window.addEventListener('DOMContentLoaded', () => {
-    //   // Get the element by id
-    //   const element = document.getElementById("p1");
-    //   // Add the ondragstart event listener
-    //   element.addEventListener("dragstart", dragstart_handler);
-    // });
-
-    function dragover_handler(ev) {
-      ev.preventDefault();
-      ev.dataTransfer.dropEffect = "move";
-    }
-    function drop_handler(ev) {
-      ev.preventDefault();
-      // Get the id of the target and add the moved element to the target's DOM
-      const data = ev.dataTransfer.getData("text/plain");
-      ev.target.appendChild(document.getElementById(data));
-    }
-  </script>
 </body>
 
 </html>

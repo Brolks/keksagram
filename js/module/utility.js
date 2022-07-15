@@ -5,8 +5,19 @@ function criateRandomNamber(varFunc,func,obj){
   else
     return criateRandomNamber(varFunc,func,obj);
 }
-function hiddenElement(name){
-  document.querySelector(name).classList.add('hidden');
+
+function hideElement(name){
+  if(typeof(name)==='object')
+    name.classList.add('hidden');
+  else
+    document.querySelectorAll(name).forEach((ele)=>{ele.classList.add('hidden');})
 }
 
-export {criateRandomNamber,hiddenElement};
+function showElement(name){
+  if(typeof(name)==='object')
+    name.classList.remove('hidden');
+  else
+    document.querySelectorAll(name).forEach((ele)=>{ele.classList.remove('hidden');})
+}
+
+export {criateRandomNamber,hideElement,showElement};

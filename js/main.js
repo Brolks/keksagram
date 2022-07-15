@@ -1,8 +1,11 @@
-import criatePickcher from "./module/imageGenerator/criatePickcher.js";
-import criateFotosFragment from "./module/imageGenerator/criateFotosFragment.js";
-let pullPhoto = [];
+import criatePickcher       from "./module/imageGenerator/criatePickcher.js";
+import criateFotosFragment  from "./module/imageGenerator/criateFotosFragment.js";
+import "./module/imageEditor.js";
+
 for(let i = 1; i<=25;i++){
-  pullPhoto.push(criatePickcher(i));
+  PULL_PHOTO.push(criatePickcher(i));
 }
-console.log(pullPhoto);
-document.querySelector('.pictures').appendChild(criateFotosFragment(pullPhoto));
+
+document.querySelector('.pictures').appendChild(criateFotosFragment(PULL_PHOTO));
+
+
